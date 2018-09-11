@@ -1,12 +1,16 @@
-<div v-if='weatherData[currentcity] != null'>
-  <div v-if="weatherData[currentcity]['error'] == null">
-    <p>{{ currentcity }}</p>
-    <p>{{ weatherData[currentcity].main }}</p>
-    <p>{{ weatherData[currentcity].description }}</p>
-    <p>{{ weatherData[currentcity].temp }}</p>
-    <img :src="weatherData[currentcity].iconUrl" alt="">
+<transition name="fade" mode="out-in">
+  <div :key='currentcity' v-if='weatherData[currentcity] != null'>
+    <div v-if="weatherData[currentcity]['error'] == null">
+      <p>{{ currentcity }}</p>
+      <p>{{ weatherData[currentcity].main }}</p>
+      <p>{{ weatherData[currentcity].description }}</p>
+      <p>
+        <unit-celcius :value='weatherData[currentcity].temp'></unit-celcius>
+      </p>
+      <img :src="weatherData[currentcity].iconUrl" alt="">
+    </div>
+    <div v-else>
+      <error-message :message="weatherData[currentcity].error"></error-message>
+    </div>
   </div>
-  <div v-else>
-    <error-message :message="weatherData[currentcity].error"></error-message>
-  </div>
-</div>
+</transition>

@@ -1,12 +1,14 @@
 import bus from "../bus"
 import Vue from "vue"
 import errorMessage from "../errorMessage/index.vue"
+import unitCelcius from "../UnitCelcius/index.vue"
 const titleize = require("underscore.string/titleize")
 
 export default {
   name: "CityOutput",
   components: {
-    "error-message": errorMessage
+    "error-message": errorMessage,
+    "unit-celcius": unitCelcius
   },
   methods: {
     onSubmit(city) {
@@ -52,6 +54,7 @@ export default {
   destroyed() {
     bus.$off("new city", this.onSubmit)
   },
+  props: ["celcius"],
   data() {
     return {
       currentcity: null,
