@@ -1,0 +1,34 @@
+{
+  "name": "my-vue-tut",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uybinh/my-vue-tut.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/uybinh/my-vue-tut/issues"
+  },
+  "homepage": "https://github.com/uybinh/my-vue-tut#readme",
+  "dependencies": {
+    "underscore.string": "3.3.4"
+  },
+  "devDependencies": {
+    "@babel/core": "7.0.0",
+    "@babel/preset-env": "7.0.0",
+    "babel-loader": "8.0.2",
+    "vue": "2.5.17",
+    "vue-loader": "15.4.1",
+    "vue-template-compiler": "2.5.17",
+    "webpack": "4.17.2",
+    "webpack-cli": "3.1.0"
+  }
+}
