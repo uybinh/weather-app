@@ -1,5 +1,10 @@
-<form v-on:submit.prevent="onSubmit">
-  <input type="text" v-model='cityname' placeholder="Enter city name of your current location" required>
+<form class="text-center" v-on:submit.prevent="onSubmit">
+  <div class="form-group">
+    <input class="form-control" type="text" v-model='cityname' placeholder="Enter city name of your current location"
+      required>
+  </div>
+  <div class="form-group">
+    <button class="btn btn-success" type="submit">Go!</button>
+  </div>
 
-  <button type="submit">Go!</button>
 </form>

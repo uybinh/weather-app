@@ -19,13 +19,20 @@
   },
   "homepage": "https://github.com/uybinh/my-vue-tut#readme",
   "dependencies": {
-    "underscore.string": "3.3.4"
+    "bootstrap": "4.1.3",
+    "bootstrap-vue": "2.0.0-rc.11",
+    "underscore.string": "3.3.4",
+    "vue-loading-spinner": "1.0.11"
   },
   "devDependencies": {
     "@babel/core": "7.0.0",
     "@babel/preset-env": "7.0.0",
     "babel-loader": "8.0.2",
+    "babel-plugin-syntax-async-functions": "6.13.0",
+    "babel-plugin-transform-regenerator": "6.26.0",
+    "babel-polyfill": "6.26.0",
     "css-loader": "1.0.0",
+    "sass-loader": "7.1.0",
     "vue": "2.5.17",
     "vue-loader": "15.4.1",
     "vue-style-loader": "4.1.2",

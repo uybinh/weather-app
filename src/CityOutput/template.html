@@ -1,16 +1,22 @@
 <transition name="fade" mode="out-in">
-  <div :key='currentcity' v-if='weatherData[currentcity] != null'>
-    <div v-if="weatherData[currentcity]['error'] == null">
-      <p>{{ currentcity }}</p>
-      <p>{{ weatherData[currentcity].main }}</p>
-      <p>{{ weatherData[currentcity].description }}</p>
-      <p>
-        <unit-celcius :value='weatherData[currentcity].temp'></unit-celcius>
-      </p>
-      <img :src="weatherData[currentcity].iconUrl" alt="">
-    </div>
-    <div v-else>
-      <error-message :message="weatherData[currentcity].error"></error-message>
+  <div class="spinner" :key='loading' v-if='loading'>
+    <rotate-spinner></rotate-spinner>
+  </div>
+  <div v-else :key='currentcity'>
+    <div v-if='weatherData[currentcity] != null'>
+      <div class="weather-info" v-if="weatherData[currentcity]['error'] == null">
+        <h2>{{ currentcity }}</h2>
+        <img :src="weatherData[currentcity].iconUrl" alt="">
+        <h4>{{ weatherData[currentcity].main }}</h4>
+        <p>{{ weatherData[currentcity].description }}</p>
+        <h3>
+          <unit-celcius :value='weatherData[currentcity].temp'></unit-celcius>
+        </h3>
+
+      </div>
+      <div class="text-center" v-else>
+        <error-message :message="weatherData[currentcity].error"></error-message>
+      </div>
     </div>
   </div>
 </transition>
