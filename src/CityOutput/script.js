@@ -30,7 +30,7 @@ export default {
         return Promise.resolve(this.weatherData[city])
       }
 
-      let url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&APPID=58d03697aa5078125fa32b20531cbf70`
+      let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&APPID=58d03697aa5078125fa32b20531cbf70`
       return fetch(url)
         .then(response => {
           if (response.status == 404) {
@@ -46,7 +46,7 @@ export default {
             description: titleize(json["weather"][0]["description"]),
             temp: json["main"]["temp"],
             iconUrl:
-              "http://openweathermap.org/img/w/" +
+              "https://openweathermap.org/img/w/" +
               json["weather"][0]["icon"] +
               ".png"
           }
